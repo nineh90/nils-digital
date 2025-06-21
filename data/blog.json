@@ -3,6 +3,36 @@
     "id": "eins",
     "title": "🌟 Der Moment, als alles klar wurde",
     "teaser": "Ein kurzer Gedanke über Entscheidungen, Mut und Bauchgefühl…",
-    "content": "<p>Manchmal braucht es keine großen Worte...</p><img src='../img/projekt1.jpg' alt='Symbolbild' />"
+    "content": [
+      {
+        "type": "text",
+        "value": "Manchmal braucht es keine großen Worte. Es reicht ein Blick, ein Gefühl – und plötzlich ist alles klar."
+      },
+      {
+        "type": "image",
+        "src": "../img/projekt2.jpg",
+        "alt": "Symbolbild"
+      },
+      {
+        "type": "text",
+        "value": "Genau so war es bei mir, als ich damals mit Sunny losgezogen bin."
+      }
+    ]
+  },
+  {
+    "id": "zwei",
+    "title": "🚐 Unterwegs mit Sunny",
+    "teaser": "Ein Tag auf der Straße, ein freier Kopf und ein voller Rucksack.",
+    "content": [
+      {
+        "type": "text",
+        "value": "Wenn der Wind um die Ohren pfeift, ist oft kein Gedanke mehr im Weg. Sunny und ich, unterwegs wie immer."
+      },
+      {
+        "type": "image",
+        "src": "../img/projekt1.jpg",
+        "alt": "Symbolbild"
+      }
+    ]
   }
 ]

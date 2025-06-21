@@ -172,11 +172,11 @@ function rotateSprueche() {
       lastIndex = newIndex;
     }, 300);
   }
-
-  // 👉 Gleich beim Start einen Spruch anzeigen
   zeigeZufaelligenSpruch();
-
-  // 👉 Dann alle 6 Sekunden rotieren
   setInterval(zeigeZufaelligenSpruch, 6000);
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  rotateSprueche();
+});
 

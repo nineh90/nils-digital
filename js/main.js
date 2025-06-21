@@ -37,17 +37,12 @@ function rotateGreetings() {
       i++;
     }, 300);
   }
-
-  // Direkt starten
   zeigeBegruessung();
-
-  // Dann alle 6 Sekunden wiederholen
   setInterval(zeigeBegruessung, 6000);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   rotateGreetings();
-  rotateSprueche();
 });
 
 
