@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gedankenwelt – nils-digital</title>
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <header id="header"></header>
+
+  <main>
+    <section class="blog-intro">
+      <h1>🧠 Gedankenwelt</h1>
+      <p>
+        Hier teile ich, was mich bewegt – mal ernst, mal verrückt, mal ganz einfach echt.  
+        Gedanken, Beobachtungen, Erlebnisse. Manchmal kurz, manchmal lang. Aber immer ehrlich.
+      </p>
+    </section>
+
+    <section class="blog-grid"></section>
+
+    <!-- Versteckte Blogbeiträge – später dynamisch laden -->
+    <section id="blog-detail" class="hidden">
+      <button onclick="versteckeBeitrag()">Zurück</button>
+      <div id="blog-content">
+        <!-- Dynamischer Inhalt hier -->
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/include.js"></script>
+  <script src="../js/blog.js"></script>
+</body>
+</html>

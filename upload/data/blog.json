@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eins",
+    "title": "🌟 Der Moment, als alles klar wurde",
+    "teaser": "Ein kurzer Gedanke über Entscheidungen, Mut und Bauchgefühl…",
+    "content": "<p>Manchmal braucht es keine großen Worte...</p><img src='../img/projekt1.jpg' alt='Symbolbild' />"
+  },
+  {
+    "id": "zwei",
+    "title": "🚐 Unterwegs mit Sunny",
+    "teaser": "Ein Tag auf der Straße, ein freier Kopf und ein voller Rucksack.",
+    "content": "<p>Freiheit auf vier Pfoten...</p><img src='../img/sunny-nils.jpg' alt='Sunny unterwegs' />"
+  },
+  {
+    "id": "drei",
+    "title": "📦 Warum Chaos manchmal hilft",
+    "teaser": "Ein kleiner Einblick in meine Art, Projekte anzugehen.",
+    "content": "<p>Ordnung ist gut. Aber Chaos ist manchmal ehrlich...</p>"
+  },
+  {
+    "id": "vier",
+    "title": "📦 Test",
+    "teaser": "Ein kleiner Test.",
+    "content": "<p>Warum ein Test manchmal Sinvoll ist :)</p>"
+  }
+]

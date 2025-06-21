@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – nils-digital</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main>
+    <section class="kontakt-intro">
+      <h1>📬 Kontaktiere uns</h1>
+      <p>Du möchtest mir oder Sunny schreiben? Fragen zu einem Projekt stellen? Oder einfach nur Hallo sagen? Dann bist du hier genau richtig.</p>
+    </section>
+
+    <section class="kontakt-socials">
+      <div class="kontakt-box">
+        <h2>🧑‍💻 Nils</h2>
+        <ul>
+          <li><a href="#" target="_blank">📘 Facebook</a></li>
+          <li><a href="#" target="_blank">📷 Instagram</a></li>
+          <li><a href="#" target="_blank">🎥 YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="kontakt-box">
+        <h2>🐾 Sunny</h2>
+        <ul>
+          <li><a href="#" target="_blank">📸 Instagram</a></li>
+          <li><a href="#" target="_blank">🎬 TikTok</a></li>
+          <li><a href="#" target="_blank">▶️ YouTube</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div id="spendenbereich"></div>
+
+    <section class="kontakt-formular">
+      <h2>✉️ Kontaktformular</h2>
+      <form method="post" action="../php/contact.php">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="nachricht">Nachricht*</label>
+        <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+
+        <button type="submit" disabled>Senden (später aktiv)</button>
+        <p class="hinweis">Die Mailfunktion wird nach Domainfreischaltung aktiviert.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/include.js"></script>
+</body>
+</html>
