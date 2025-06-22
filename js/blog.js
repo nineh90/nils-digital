@@ -55,7 +55,7 @@ function erstelleOverlay(title, contentHTML) {
   overlay.className = "popup-overlay";
   overlay.id = "popup-overlay";
   overlay.innerHTML = `
-    <section id="blog-detail">
+    <section id="blog-detail" class="pt-6">
       <button onclick="versteckeBeitrag()">Zurück</button>
       <div id="blog-content">
         <h2>${title}</h2>
