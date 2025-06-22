@@ -51,12 +51,14 @@ function erstelleContentHTML(content) {
 
 // 🧩 Hilfsfunktion: Overlay erzeugen
 function erstelleOverlay(title, contentHTML) {
+  document.body.classList.add("overflow-hidden");
   const overlay = document.createElement("div");
   overlay.className = "popup-overlay";
   overlay.id = "popup-overlay";
   overlay.innerHTML = `
     <section id="blog-detail" class="pt-6">
-      <button onclick="versteckeBeitrag()">Zurück</button>
+      <button id="closeX" onclick="versteckeBeitrag()">X</button>
+      <button id="closeBtn" onclick="versteckeBeitrag()">Zurück</button>
       <div id="blog-content">
         <h2>${title}</h2>
         ${contentHTML}
@@ -90,6 +92,7 @@ function aktualisiereSprueche(id) {
 function versteckeBeitrag() {
   const overlay = document.getElementById("popup-overlay");
   if (overlay) {
+    document.body.classList.remove("overflow-hidden");
     overlay.remove();
   }
 }

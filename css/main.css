@@ -455,9 +455,8 @@ nav ul li a {
   justify-content: center;
 }
 
-#blog-detail button {
+#blog-detail #closeX, #blog-detail #closeBtn {
   position: absolute;
-  top: 1rem;
   right: 1rem;
   background: #f7b733;
   color: white;
@@ -466,6 +465,14 @@ nav ul li a {
   border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+#blog-detail #closeX {
+  top: 1rem;
+}
+
+#blog-detail #closeBtn {
+  bottom: 1rem;
 }
 
 @keyframes popupFadeIn {
@@ -483,7 +490,7 @@ nav ul li a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 2rem auto 2.5rem auto;
 }
 
 .spendenbox h3 {
