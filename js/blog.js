@@ -58,10 +58,12 @@ function erstelleOverlay(title, contentHTML) {
   overlay.innerHTML = `
     <section id="blog-detail" class="pt-6">
       <button id="closeX" onclick="versteckeBeitrag()">X</button>
-      <button id="closeBtn" onclick="versteckeBeitrag()">Zurück</button>
       <div id="blog-content">
         <h2>${title}</h2>
         ${contentHTML}
+      </div>      
+      <div class="w-full flex justify-end">
+        <button id="closeBtn" onclick="versteckeBeitrag()">Zurück</button>
       </div>
     </section>
   `;
