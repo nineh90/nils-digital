@@ -1,6 +1,6 @@
 [
   {
-    "id": "eins",
+    "id": 1,
     "title": "🌟 Der Moment, als alles klar wurde",
     "teaser": "Ein kurzer Gedanke über Entscheidungen, Mut und Bauchgefühl…",
     "content": [
@@ -15,24 +15,44 @@
       },
       {
         "type": "text",
-        "value": "Genau so war es bei mir, als ich damals mit Sunny losgezogen bin."
+        "value": "Genau so war es bei mir, als ich 2023 mit Sunny losgezogen bin."
       }
     ]
   },
   {
-    "id": "zwei",
-    "title": "🚐 Unterwegs mit Sunny",
-    "teaser": "Ein Tag auf der Straße, ein freier Kopf und ein voller Rucksack.",
-    "content": [
-      {
-        "type": "text",
-        "value": "Wenn der Wind um die Ohren pfeift, ist oft kein Gedanke mehr im Weg. Sunny und ich, unterwegs wie immer."
-      },
-      {
-        "type": "image",
-        "src": "../img/projekt1.jpg",
-        "alt": "Symbolbild"
-      }
-    ]
-  }
+  "id": 2,
+  "title": "🎁 Unterstütze meine Projekte",
+  "teaser": "Hier kannst du direkt etwas Gutes tun.",
+  "content": [
+    {
+      "type": "text",
+      "value": "Ich stecke viel Herz in meine Projekte – jede Unterstützung zählt!"
+    },
+    {
+      "type": "html",
+      "value": "<div id='spendeblog'></div>"
+    }
+  ]
+},
+{
+  "id": 3,
+  "title": "💡 Infos zum Blog",
+  "teaser": "Ein kleiner Beitrag kann Großes bewirken.",
+  "content": [
+    {
+      "type": "text",
+      "value": "Hier findet ihr nach und nach Beiträge und Gedanken aus meinem Leben. Schaut hier gerne regelmäßig vorbei."
+    },
+    {
+      "type": "html",
+      "value": "<div id='spendeblog-mini'></div>"
+    },
+    {
+      "type": "html",
+      "value" : "<div id='sprueche-mini'></div>"
+    }
+  ]
+}
+
+
 ]

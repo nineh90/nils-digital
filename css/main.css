@@ -177,6 +177,23 @@ nav ul li a {
   font-size: 1.1rem;
 }
 
+.about-extra {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.about-extra ul {
+  list-style: none;
+  padding-left: 0;
+}
+.about-extra ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+
 /* lernsoftware */
 
 .project-hero {

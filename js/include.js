@@ -5,13 +5,9 @@ function loadComponent(id, file, callback) {
       const target = document.getElementById(id);
       if (target) {
         target.innerHTML = data;
-
-        // Spezialfall: Menü initialisieren, wenn Header geladen wurde
         if (id === "header") {
           initMenu();
         }
-
-        // Optional: nachträgliche Funktion aufrufen, wenn gewünscht
         if (typeof callback === "function") {
           callback();
         }
@@ -41,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   loadComponent("header", "header.html");
 
   loadComponent("footer", "footer.html", () => {
-    // Nur wenn footer fertig geladen ist, prüfen ob die Spendencontainer existieren
+    // Wenn Footer fertig geladen, prüfen ob die Spendencontainer existieren
     if (document.getElementById("spendenbereich")) {
       loadComponent("spendenbereich", "spendenbox.html");
     }
