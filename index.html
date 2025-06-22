@@ -13,20 +13,21 @@
 
   <main>
     <section x-data="slider()" x-init="init()" class="relative p-6 sm:p-0 sm:py-6 m-auto bg-[#f7e3b6]">
-<div class="slider-container relative overflow-hidden h-[50vh] container m-auto">
-  <template x-for="(bild, index) in bilder" :key="index">
-    <div
-      class="absolute top-0 left-0 w-full h-full flex items-center justify-center transition-transform duration-700 ease-in-out"
-      :class="{
-        'translate-x-0 z-10': aktuellerIndex === index,
-        '-translate-x-full z-0': aktuellerIndex > index,
-        'translate-x-full z-0': aktuellerIndex < index
-      }"
-    >
-      <img :src="bild" alt="Slider Bild" class="max-h-full max-w-full object-contain rounded-xl" />
-    </div>
-  </template>
-</div>
+      <div class="slider-container relative overflow-hidden h-[50vh] container m-auto">
+        <div
+          class="slider-item w-full h-full flex items-center justify-center"
+          x-show="true"
+          @mousedown="dragStart($event)"
+          @mouseup="dragEnd($event)"
+          @touchstart="dragStart($event)"
+          @touchend="dragEnd($event)"
+          x-transition:enter="transition-opacity duration-700"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+        >
+          <img :src="bilder[aktuellerIndex]" alt="Slider Bild" class="max-h-full max-w-full object-contain rounded-xl" />
+        </div>
+      </div>
 
 
       <!-- Punkte-Navigation -->
@@ -74,19 +75,19 @@
     <section class="projekt-teaser">
       <h2>Aktuelles</h2>
       <div class="teaser-grid">
-        <div class="teaser-box">
+        <div class="teaser-box flex flex-col items-center">
           <img class="teaser-img" src="img/projekt1.jpg" alt="Lernsoftware" />
           <h3>Lernsoftware</h3>
           <p>Spielerisch Lernen mit XP-System, Avatar & Belohnungen.</p>
           <a href="pages/lernsoftware.html">Mehr erfahren</a>
         </div>
-        <div class="teaser-box">
+        <div class="teaser-box flex flex-col items-center">
           <img class="teaser-img" src="img/projekt2.jpg" alt="SunnyCam" />
           <h3>SunnyCam</h3>
           <p>Unterwegs mit Sunny – die Welt aus ihrer Sicht.</p>
           <a href="pages/sunnycam.html">Mehr erfahren</a>
         </div>
-        <div class="teaser-box">
+        <div class="teaser-box flex flex-col items-center">
           <img class="teaser-img" src="img/sunny-nils.jpg" alt="Gedankenwelt" />
           <h3>Gedankenwelt</h3>
           <p>Persönliches, Verrücktes, Ehrliches.</p>
