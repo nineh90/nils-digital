@@ -5,14 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>nils-digital</title>
   <link rel="stylesheet" href="css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="header"></header>
 
   <main>
+    <section x-data="slider()" x-init="init()" class="relative p-6 sm:p-0 sm:py-6 m-auto bg-[#f7e3b6]">
+<div class="slider-container relative overflow-hidden h-[50vh] container m-auto">
+  <template x-for="(bild, index) in bilder" :key="index">
+    <div
+      class="absolute top-0 left-0 w-full h-full flex items-center justify-center transition-transform duration-700 ease-in-out"
+      :class="{
+        'translate-x-0 z-10': aktuellerIndex === index,
+        '-translate-x-full z-0': aktuellerIndex > index,
+        'translate-x-full z-0': aktuellerIndex < index
+      }"
+    >
+      <img :src="bild" alt="Slider Bild" class="max-h-full max-w-full object-contain rounded-xl" />
+    </div>
+  </template>
+</div>
+
+
+      <!-- Punkte-Navigation -->
+      <div class="flex justify-center gap-2 mt-2">
+        <template x-for="(bild, index) in bilder" :key="'punkt-' + index">
+          <button
+            class="w-4 h-4 rounded-full"
+            :class="aktuellerIndex === index ? 'bg-yellow-600' : 'bg-gray-300'"
+            @click="wechseln(index)"
+          ></button>
+        </template>
+      </div>
+    </section>
+
     <section class="hero">
-      <img src="img/sunny-nils.jpg" alt="Nils mit Sunny" />
       <div class="intro-text">
         <div id="begruessung" class="begrussung-animation">
           Mahlzeit! 👋
@@ -73,5 +102,7 @@
   <script src="js/main.js"></script>
   <script src="js/include.js"></script>
   <script src="js/sprueche.js"></script>
+  <script src="js/slider.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

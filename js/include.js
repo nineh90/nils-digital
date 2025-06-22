@@ -21,6 +21,7 @@ function loadComponent(id, file, callback) {
 function initMenu() {
   const btn = document.querySelector(".hamburger");
   const nav = document.getElementById("main-nav");
+  const icons = document.querySelectorAll(".hamburger span")
 
   if (!btn || !nav) {
     console.warn("⚠️ Menüelemente nicht gefunden.");
@@ -28,8 +29,11 @@ function initMenu() {
   }
 
   btn.addEventListener("click", () => {
-    nav.classList.toggle("hidden");
-    console.log("☰ Menü umgeschaltet!");
+        nav.classList.toggle("max-h-0");
+    nav.classList.toggle("opacity-0");
+    nav.classList.toggle("opacity-100");
+    nav.classList.toggle("max-h-96");
+    icons.forEach(icon => icon.classList.toggle("hidden"));
   });
 }
 
