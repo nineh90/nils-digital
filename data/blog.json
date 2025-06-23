@@ -3,10 +3,15 @@
     "id": 1,
     "title": "🌟 Der Moment, als alles klar wurde",
     "teaser": "Ein kurzer Gedanke über Entscheidungen, Mut und Bauchgefühl…",
+    "date": "2023-12-03",
+    "categories": ["Gedanken", "Sunny"],
+    "tags": ["Entscheidung", "Bauchgefühl", "Neuanfang"],
+    "author": "Nils",
+    "visible": true,
     "content": [
       {
         "type": "text",
-        "value": "Manchmal braucht es keine großen Worte. Es reicht ein Blick, ein Gefühl – und plötzlich ist alles klar."
+        "value": "Manchmal braucht es keine großen Worte. Es reicht ein Blick, ein Gefühl – und plötzlich ist alles klar. Genau so war es bei mir, als ich 2023 mit Sunny losgezogen bin."
       },
       {
         "type": "image",
@@ -15,44 +20,68 @@
       },
       {
         "type": "text",
-        "value": "Genau so war es bei mir, als ich 2023 mit Sunny losgezogen bin."
+        "value": "Das Bild zeigt Sunny heute, wie sie mich anschaut! Ihr Blick verrät mehr als tausend Worte - Vertrauen und Ruhe, das sie mir schenkt nach ihrer Vergangenheit."
+      },
+      {
+        "type": "text",
+        "value": "Vertrauen das sie mir gibt weil Hunde merken, wer es ernst meint."
+      },
+      {
+        "type": "text",
+        "value": "Sunny kommt ursprünglich aus dem Tierschutz. Sie wurde aus schlechten Verhältnissen gerettet. Mehr dazu findet ihr in kommenden Blogbeiträgen."
+      },
+      {
+        "type": "html",
+        "value": "<div id='spendeblog-mini'></div>"
+      },
+      {
+        "type": "text",
+        "value": "Wenn ich euer Interesse geweckt habe schaut gerne regelmäßig vorbei."
       }
     ]
   },
   {
-  "id": 2,
-  "title": "🎁 Unterstütze meine Projekte",
-  "teaser": "Hier kannst du direkt etwas Gutes tun.",
-  "content": [
-    {
-      "type": "text",
-      "value": "Ich stecke viel Herz in meine Projekte – jede Unterstützung zählt!"
-    },
-    {
-      "type": "html",
-      "value": "<div id='spendeblog'></div>"
-    }
-  ]
-},
-{
-  "id": 3,
-  "title": "💡 Infos zum Blog",
-  "teaser": "Ein kleiner Beitrag kann Großes bewirken.",
-  "content": [
-    {
-      "type": "text",
-      "value": "Hier findet ihr nach und nach Beiträge und Gedanken aus meinem Leben. Schaut hier gerne regelmäßig vorbei."
-    },
-    {
-      "type": "html",
-      "value": "<div id='spendeblog-mini'></div>"
-    },
-    {
-      "type": "html",
-      "value" : "<div id='sprueche-mini'></div>"
-    }
-  ]
-}
-
-
+    "id": 2,
+    "title": "🎁 Unterstütze meine Projekte",
+    "teaser": "Hier kannst du direkt etwas Gutes tun.",
+    "date": "2025-01-10",
+    "categories": ["Spenden & Support", "Projekte"],
+    "tags": ["Unterstützung", "Spende", "Herzensprojekt"],
+    "author": "Nils",
+    "visible": true,
+    "content": [
+      {
+        "type": "text",
+        "value": "Ich stecke viel Herz in meine Projekte – jede Unterstützung zählt!"
+      },
+      {
+        "type": "html",
+        "value": "<div id='spendeblog'></div>"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "💡 Infos zum Blog",
+    "teaser": "Ein kleiner Beitrag kann Großes bewirken.",
+    "date": "2025-01-20",
+    "categories": ["Überblick", "Gedanken"],
+    "tags": ["Meta", "Blogstart", "Info"],
+    "author": "Nils",
+    "visible": true,
+    "content": [
+      {
+        "type": "text",
+        "value": "Hier findet ihr nach und nach Beiträge und Gedanken aus meinem Leben. Schaut hier gerne regelmäßig vorbei."
+      },
+      {
+        "type": "html",
+        "value": "<div id='spendeblog-mini'></div>"
+      },
+      {
+        "type": "html",
+        "value": "<div id='sprueche-mini'></div>"
+      }
+    ]
+  }
 ]

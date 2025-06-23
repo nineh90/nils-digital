@@ -4,7 +4,7 @@ function ladeBlog() {
   fetch("../data/blog.json")
     .then(res => res.json())
     .then(data => {
-      blogTexte = {}; // leeren
+      blogTexte = {};
       const grid = document.querySelector(".blog-grid");
       data.forEach(beitrag => {
         blogTexte[beitrag.id] = beitrag;
@@ -17,22 +17,86 @@ function ladeBlog() {
     })
     .catch(err => console.error("Fehler beim Laden der Blogdaten:", err));
 }
-
 function zeigeBeitrag(id) {
-  const container = document.getElementById("blog-detail");
-  const content = document.getElementById("blog-content");
   const beitrag = blogTexte[id];
+  if (!beitrag) return;
 
-  if (beitrag) {
-    content.innerHTML = `<h2>${beitrag.title}</h2>${beitrag.content}`;
-    container.classList.remove("hidden");
-    window.scrollTo(0, container.offsetTop);
-  }
+  const contentHTML = erstelleContentHTML(beitrag.content);
+  const overlay = erstelleOverlay(beitrag.title, contentHTML);
+  document.body.appendChild(overlay);
+
+  // Komponente(n) nachladen
+  setTimeout(() => {
+    ladeKomponente("spendeblog", "../components/spendenbox.html");
+    ladeKomponente("spendeblog-mini", "../components/spendenbox-mini.html");
+    aktualisiereSprueche("sprueche-mini"); // fügt zufälligen Spruch ein
+  }, 50);
 }
 
+// 🧩 Hilfsfunktion: Content verarbeiten
+function erstelleContentHTML(content) {
+  return content
+    .map(part => {
+      if (part.type === "text") {
+        return `<p>${part.value}</p>`;
+      } else if (part.type === "image") {
+        return `<img src="${part.src}" alt="${part.alt || ''}">`;
+      } else if (part.type === "html") {
+        return part.value;
+      }
+      return "";
+    })
+    .join("");
+}
+
+// 🧩 Hilfsfunktion: Overlay erzeugen
+function erstelleOverlay(title, contentHTML) {
+  document.body.classList.add("overflow-hidden");
+  const overlay = document.createElement("div");
+  overlay.className = "popup-overlay";
+  overlay.id = "popup-overlay";
+  overlay.innerHTML = `
+    <section id="blog-detail" class="pt-6">
+      <button id="closeX" onclick="versteckeBeitrag()">X</button>
+      <div id="blog-content">
+        <h2>${title}</h2>
+        ${contentHTML}
+      </div>      
+      <div class="w-full flex justify-end">
+        <button id="closeBtn" onclick="versteckeBeitrag()">Zurück</button>
+      </div>
+    </section>
+  `;
+  return overlay;
+}
+
+// 🧩 Hilfsfunktion: HTML-Komponente laden
+function ladeKomponente(id, quelle) {
+  const ziel = document.getElementById(id);
+  if (!ziel) return;
+  fetch(quelle)
+    .then(res => res.text())
+    .then(html => {
+      ziel.innerHTML = html;
+    })
+    .catch(err => console.warn(`Komponente ${id} konnte nicht geladen werden:`, err));
+}
+
+// 🧩 Sprüche zufällig einfügen (aus bereits existierender Variable `sprueche`)
+function aktualisiereSprueche(id) {
+  const ziel = document.getElementById(id);
+  if (!ziel || typeof sprueche === "undefined" || !Array.isArray(sprueche)) return;
+  const zufall = Math.floor(Math.random() * sprueche.length);
+  ziel.innerHTML = `<p class="spruch">${sprueche[zufall]}</p>`;
+}
+
+
 function versteckeBeitrag() {
-  document.getElementById("blog-detail").classList.add("hidden");
-  document.getElementById("blog-content").innerHTML = "";
+  const overlay = document.getElementById("popup-overlay");
+  if (overlay) {
+    document.body.classList.remove("overflow-hidden");
+    overlay.remove();
+  }
 }
 
 window.addEventListener("DOMContentLoaded", ladeBlog);

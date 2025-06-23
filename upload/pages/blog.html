@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gedankenwelt – nils-digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
@@ -17,11 +19,19 @@
         Gedanken, Beobachtungen, Erlebnisse. Manchmal kurz, manchmal lang. Aber immer ehrlich.
       </p>
     </section>
+    <div id="spendenbereich"></div>
+    <div id="spruch-des-moments" class="spruch-box"></div>
+    
 
     <section class="blog-grid"></section>
 
     <!-- Versteckte Blogbeiträge – später dynamisch laden -->
-
+    <section id="blog-detail" class="hidden">
+      <button onclick="versteckeBeitrag()">Zurück</button>
+      <div id="blog-content pt-6">
+        <!-- Dynamischer Inhalt hier -->
+      </div>
+    </section>
   </main>
 
   <footer id="footer"></footer>
@@ -29,5 +39,6 @@
   <script src="../js/main.js"></script>
   <script src="../js/include.js"></script>
   <script src="../js/blog.js"></script>
+  <script src="../js/sprueche.js"></script>
 </body>
 </html>

@@ -5,41 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>nils-digital</title>
   <link rel="stylesheet" href="css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="header"></header>
-  
+
   <main>
-    <section class="hero">
-      <img src="img/sunny-nils.jpg" alt="Nils mit Sunny" />
-      <div class="intro-text">
-        <h1>Willkommen bei <span>nils-digital</span></h1>
-        <p>Ich bin Nils – zwischen Code, Kreativität und Hundeperspektive. Hier findest du Projekte, Gedanken und echte Geschichten aus meinem Leben.</p>
+    <section x-data="slider()" x-init="init()" class="relative p-6 sm:p-0 sm:py-6 m-auto bg-[#f7e3b6]">
+      <div class="slider-container relative overflow-hidden h-[50vh] container m-auto">
+        <div
+          class="slider-item w-full h-full flex items-center justify-center"
+          x-show="true"
+          @mousedown="dragStart($event)"
+          @mouseup="dragEnd($event)"
+          @touchstart="dragStart($event)"
+          @touchend="dragEnd($event)"
+          x-transition:enter="transition-opacity duration-700"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+        >
+          <img :src="bilder[aktuellerIndex]" alt="Slider Bild" class="max-h-full max-w-full object-contain rounded-xl" />
+        </div>
+      </div>
+
+
+      <!-- Punkte-Navigation -->
+      <div class="flex justify-center gap-2 mt-2">
+        <template x-for="(bild, index) in bilder" :key="'punkt-' + index">
+          <button
+            class="w-4 h-4 rounded-full"
+            :class="aktuellerIndex === index ? 'bg-yellow-600' : 'bg-gray-300'"
+            @click="wechseln(index)"
+          ></button>
+        </template>
       </div>
     </section>
 
-    <section class="projekt-teaser">
-      <h2>Aktuelles</h2>
-      <div class="teaser-grid">
-        <div class="teaser-box">
-          <img class="teaser-img" src="img/projekt1.jpg" alt="Lernsoftware" />
-          <h3>Lernsoftware</h3>
-          <p>Spielerisch Lernen mit XP-System, Avatar & Belohnungen.</p>
-          <a href="pages/lernsoftware.html">Mehr erfahren</a>
+    <section class="hero container mx-auto px-6 sm:px-0">
+      <div class="intro-text">
+        <div id="begruessung" class="begrussung-animation">
+          Mahlzeit! 👋
         </div>
-        <div class="teaser-box">
-          <img class="teaser-img" src="img/projekt2.jpg" alt="SunnyCam" />
-          <h3>SunnyCam</h3>
-          <p>Unterwegs mit Sunny – die Welt aus ihrer Sicht.</p>
-          <a href="pages/sunnycam.html">Mehr erfahren</a>
-        </div>
-        <div class="teaser-box">
-          <img class="teaser-img" src="img/sunny-nils.jpg" alt="Gedankenwelt" />
-          <h3>Gedankenwelt</h3>
-          <p>Persönliches, Verrücktes, Ehrliches.</p>
-          <a href="pages/blog.html">Mehr erfahren</a>
+        <h1>
+          Willkommen bei 
+          <span>nils-digital.de</span>
+        </h1>
+        <p>
+          Schön, dass du da bist!  
+          Ich bin Nils – Entwickler, Möglichmacher und Hundemensch mit Herz.
+        </p>
+        <p>
+          Hier findest du meine Projekte, Gedanken und das, was mir wirklich wichtig ist.
+        </p>
+        <p>
+          Ob Lernsoftware für Kinder, Perspektiven aus Sunnys Sicht 🐾  
+          oder ehrliche Worte aus dem echten Leben 
+        </p>
+        <p>
+          <span>– klick dich gern durch.</span>
+        </p>
+        <div id="spruch-des-moments" class="spruch-box">
+          Code kann warten. Kaffee nicht ☕
         </div>
       </div>
+
+    </section>
+
+    <section class="projekt-teaser">
+      <h2 class="text-[2rem]">Aktuelles</h2>
+      <div class="teaser-grid">
+        <div class="teaser-box flex flex-col justify-between">
+          <div class="flex flex-col justify-center items-center">
+            <img class="teaser-img" src="img/projekt1.jpg" alt="Lernsoftware" />
+            <h3>Lernsoftware</h3>
+            <p>Spielerisch Lernen mit XP-System, Avatar & Belohnungen.</p>
+          </div>
+          <a class="more-btn" href="pages/lernsoftware.html">Mehr erfahren</a>
+        </div>
+        <div class="teaser-box flex flex-col justify-between">
+          <div class="flex flex-col justify-center items-center">
+            <img class="teaser-img" src="img/projekt2.jpg" alt="SunnyCam" />
+            <h3>SunnyCam</h3>
+            <p>Unterwegs mit Sunny – die Welt aus ihrer Sicht.</p>
+          </div>
+          <a class="more-btn"  href="pages/sunnycam.html">Mehr erfahren</a>
+        </div>
+        <div class="teaser-box flex flex-col justify-between">
+          <div class="flex flex-col justify-center items-center">
+            <img class="teaser-img" src="img/sunny-nils.jpg" alt="Gedankenwelt" />
+            <h3>Gedankenwelt</h3>
+            <p>Persönliches, Verrücktes, Ehrliches.</p>
+          </div>
+          <a class="more-btn"  href="pages/blog.html">Mehr erfahren</a>
+        </div>
+      </div>
+      <div id="spendenbereich" class="container mx-auto px-6 sm:px-0"></div>
     </section>
   </main>
 
@@ -47,5 +108,8 @@
 
   <script src="js/main.js"></script>
   <script src="js/include.js"></script>
+  <script src="js/sprueche.js"></script>
+  <script src="js/slider.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

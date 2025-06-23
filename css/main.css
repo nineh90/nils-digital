@@ -371,11 +371,38 @@ nav ul li a {
   width: auto;
   height: auto;
   display: block;
-  margin: 1.5rem auto 0 auto;
+  margin: 1.5rem auto 1.5rem auto;
   border-radius: 1rem;
   object-fit: contain;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+/* blog Filter Container */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #fff8e1;
+  border-radius: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f7b733;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #e39d14;
+}
+
 
 
 /* Kontakt Seite */
@@ -470,6 +497,7 @@ nav ul li a {
   border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 12px;
 }
 
 #blog-detail #closeX {
@@ -528,6 +556,7 @@ nav ul li a {
   color: #444;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .spendenbox-mini a {
@@ -541,6 +570,16 @@ nav ul li a {
   text-decoration: underline;
 }
 
+#sprueche-mini{
+  background: #fff3d1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-top: 1rem;
+}
 
 
 /* Impressum */

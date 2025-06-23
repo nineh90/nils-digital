@@ -1,14 +1,37 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto Mono', monospace;
   background: #fdfcf8;
   color: #333;
 }
 
+h1, h2, h3 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+h1, h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 header {
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   position: sticky;
   left: 0;
   top: 0;
@@ -23,8 +46,14 @@ header {
   font-size: 1.5rem;
 }
 
+.logo img {
+  width: 65px;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.7))
+}
+
 .hamburger {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: bolder;
   cursor: pointer;
 }
 
@@ -53,16 +82,6 @@ nav ul li a {
   padding: 2rem;
 }
 
-.hero img {
-  max-height: 50vh;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 20px;
-}
-
 .teaser-grid {
   display: flex;
   gap: 1rem;
@@ -81,6 +100,10 @@ nav ul li a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.teaser-box h3 {
+  padding-top: 0.5rem;
+}
+
 .teaser-img{
     width: 75%;
     height: 125px;
@@ -92,6 +115,38 @@ nav ul li a {
 .projekt-teaser{
     text-align: center;
 }
+
+.begrussung-animation {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #f7b733;
+}
+
+.spruch-box {
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #444;
+  padding: 0.5rem 1rem;
+  background: #fff8e1;
+  border-radius: 0.75rem;
+  max-width: 500px;
+  margin: 1rem auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.begrussung-animation,
+.spruch-box {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.begrussung-animation.visible,
+.spruch-box.visible {
+  opacity: 1;
+}
+
 
 /* Über Mich */
 
@@ -132,6 +187,23 @@ nav ul li a {
   font-size: 1.1rem;
 }
 
+.about-extra {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.about-extra ul {
+  list-style: none;
+  padding-left: 0;
+}
+.about-extra ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+
 /* lernsoftware */
 
 .project-hero {
@@ -169,6 +241,40 @@ nav ul li a {
   margin: 0.5rem 0;
   font-size: 1.1rem;
 }
+
+.testserver-box {
+  background: #fff8e1;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testserver-button {
+  display: inline-block;
+  background-color: #f7b733;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.testserver-button:hover {
+  background-color: #e39d14;
+}
+
+.testserver-hinweis {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
 
 /* Sunny-Page  Style */
 
@@ -243,6 +349,16 @@ nav ul li a {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
+  padding-top: 3.5rem;
+  background: #fff8e1;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+  position: relative;
+  animation: popupFadeIn 0.3s ease;
 }
 
 #blog-detail.hidden {
@@ -250,10 +366,17 @@ nav ul li a {
 }
 
 #blog-detail img {
-  max-width: 100%;
+  max-width: 90%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto 0 auto;
   border-radius: 1rem;
-  margin-top: 1rem;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 
 /* Kontakt Seite */
 
@@ -323,6 +446,101 @@ nav ul li a {
   font-size: 0.9rem;
   color: #666;
 }
+
+/* Popup-Overlay und Detail */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#blog-detail #closeX, #blog-detail #closeBtn {
+  right: 1rem;
+  background: #f7b733;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#blog-detail #closeX {
+  top: 1rem;  
+  position: absolute;
+}
+
+#blog-detail #closeBtn {
+  bottom: 1rem;
+}
+
+@keyframes popupFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Spendenbereich */
+
+.spendenbox {
+  background: #fff8e1;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.spendenbox h3 {
+  margin-top: 0;
+  color: #e65100;
+}
+
+.spenden-button, .more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #f7b733;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.spenden-button:hover {
+  background: #e08e1e;
+}
+
+.spendenbox-mini {
+  background: #fff3d1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-top: 1rem;
+}
+
+.spendenbox-mini a {
+  color: #e65100;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+
+.spendenbox-mini a:hover {
+  text-decoration: underline;
+}
+
 
 
 /* Impressum */
