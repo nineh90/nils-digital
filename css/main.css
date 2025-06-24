@@ -17,7 +17,7 @@ h1, h2 {
 
 @media (max-width: 767px) {
   h1, h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -399,6 +399,11 @@ nav ul li a {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
+.filter-btn.active {
+  background-color: #e65100;
+}
+
 
 .filter-btn:hover {
   background-color: #e39d14;

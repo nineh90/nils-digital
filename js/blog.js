@@ -19,7 +19,6 @@ function ladeBlog() {
     })
     .catch(err => console.error("Fehler beim Laden der Blogdaten:", err));
 }
-
 function generiereKategorieButtons(blogdaten) {
   const container = document.getElementById("themen-filter");
   if (!container) return;
@@ -32,21 +31,37 @@ function generiereKategorieButtons(blogdaten) {
     }
   });
 
-  // „Alle Beiträge“ Button
+  // Reset Container (falls neu geladen)
+  container.innerHTML = "";
+
+  // Funktion zum Aktivieren eines Buttons
+  function setzeAktivenButton(button) {
+    const alleButtons = container.querySelectorAll(".filter-btn");
+    alleButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+  }
+
+  // „Alle Beiträge“-Button
   const alleBtn = document.createElement("button");
-  alleBtn.className = "filter-btn";
+  alleBtn.className = "filter-btn active"; // Startzustand: aktiv
   alleBtn.textContent = "Alle Beiträge";
   alleBtn.dataset.kategorie = "alle";
-  alleBtn.addEventListener("click", () => filtereBeitraege("alle", blogdaten));
+  alleBtn.addEventListener("click", () => {
+    filtereBeitraege("alle", blogdaten);
+    setzeAktivenButton(alleBtn);
+  });
   container.appendChild(alleBtn);
 
-  // Buttons aus Set generieren
+  // Kategorie-Buttons
   kategorienSet.forEach(kategorie => {
     const btn = document.createElement("button");
     btn.className = "filter-btn";
     btn.textContent = kategorie;
     btn.dataset.kategorie = kategorie;
-    btn.addEventListener("click", () => filtereBeitraege(kategorie, blogdaten));
+    btn.addEventListener("click", () => {
+      filtereBeitraege(kategorie, blogdaten);
+      setzeAktivenButton(btn);
+    });
     container.appendChild(btn);
   });
 }
@@ -71,6 +86,11 @@ function filtereBeitraege(kategorie, blogdaten) {
   });
 }
 
+function setzeAktivenButton(button) {
+  const alleButtons = document.querySelectorAll(".filter-btn");
+  alleButtons.forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+}
 
 function zeigeBeitrag(id) {
   const beitrag = blogTexte[id];

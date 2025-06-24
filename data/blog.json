@@ -55,7 +55,7 @@
   {
     "id": 2,
     "title": "🎁 Unterstütze meine Projekte",
-    "teaser": "Hier kannst du direkt etwas Gutes tun.",
+    "teaser": "Hier kannst du direkt etwas Gutes tun...",
     "date": "2025-01-10",
     "categories": ["Spenden & Support", "Projekte"],
     "tags": ["Unterstützung", "Spende", "Herzensprojekt"],
@@ -75,7 +75,7 @@
   {
     "id": 3,
     "title": "💡 Infos zum Blog",
-    "teaser": "Ein kleiner Beitrag kann Großes bewirken.",
+    "teaser": "Ein kleiner Beitrag kann Großes bewirken...",
     "date": "2025-01-20",
     "categories": ["Überblick", "Gedanken"],
     "tags": ["Meta", "Blogstart", "Info"],
@@ -108,7 +108,7 @@
     "content": [
       {
         "type": "text",
-        "value": "Anfangs traf ich mich mit dem Retter von Sunny und ihr, um Sunny langsam an mich zu gewöhnen. Nach mehreren Treffen war klar: Sunny vertraut mir."
+        "value": "Anfangs traf ich mich mit dem Retter von Sunny und ihr, um sie langsam an mich zu gewöhnen. Nach mehreren Treffen war klar: Sunny vertraut mir."
       },
       {
         "type": "text",
@@ -165,10 +165,6 @@
       {
         "type": "text",
         "value": "Nach einigen treffen mit Sunny stand für mich und ihren Retter fest: Sie muss bei mir zu Hause einmal schnüffeln und weiter abchecken, ob wir zusammen passen. Gemeinsam verabredeten wir für das kommende Wochenende eine Testübernachtung. Doch dabei sollte es nicht bleiben."
-      },
-      {
-        "type": "html",
-        "value": "<div id='spendeblog-mini'></div>"
       },
       {
         "type": "text",
@@ -244,7 +240,7 @@
       },
       {
         "type": "text",
-        "value": "Es wurde schnell klar - Sunny jetzt wieder hier raus zu reißen würde uns beiden das Herz brechen. Somit tranken wir einen Kaffee und der Vermittler ist ohne Sunny wieder gefahren. Sunny's Testwochenende verlief anders, glücklicher, als geplant."
+        "value": "Es wurde schnell klar - Sunny jetzt wieder hier raus zu reißen würde uns beiden das Herz brechen. Somit tranken wir einen Kaffee und der Vermittler ist ohne Sunny wieder gefahren. Sunny's Testwochenende verlief anders, glücklicher, als geplant - Sie ist bei mir eingezogen."
       },
       {
         "type": "text",
@@ -263,10 +259,6 @@
         "type": "image",
         "src": "../img/blog/sunny_spielt.jpg",
         "alt": "Sunny nach einer Woche bei mir"
-      },
-      {
-        "type": "html",
-        "value": "<div id='spendeblog-mini'></div>"
       }
     ]
   }
