@@ -77,7 +77,7 @@
     "title": "💡 Infos zum Blog",
     "teaser": "Ein kleiner Beitrag kann Großes bewirken...",
     "date": "2025-01-20",
-    "categories": ["Überblick", "Gedanken"],
+    "categories": ["Info", "Gedanken"],
     "tags": ["Meta", "Blogstart", "Info"],
     "author": "Nils",
     "visible": true,
@@ -101,7 +101,7 @@
     "title": "😍 Erste treffen mit Sunny",
     "teaser": "Neugierig, wie Sunny zu mir gefunden hat? Dann schau hier...",
     "date": "2023-12-03",
-    "categories": ["Sunny", "Gedanken", "Spenden & Support"],
+    "categories": ["Sunny", "Gedanken"],
     "tags": ["Gefühle", "Sunny","Neuanfang"],
     "author": "Nils",
     "visible": true,
@@ -154,10 +154,10 @@
   },
   {
     "id": 5,
-    "title": " 💒 Sunny's Einzug",
+    "title": "  Sunny's Einzug",
     "teaser": "Sunny's geplant, ungeplanter Einzug bei mir...",
     "date": "2023-12-03",
-    "categories": ["Sunny", "Gedanken", "Spenden & Support"],
+    "categories": ["Sunny", "Gedanken"],
     "tags": ["Einzug", "Gefühle", "Sunny","Neuanfang","Angst","neue Umgebung"],
     "author": "Nils",
     "visible": true,
@@ -257,8 +257,97 @@
       },
       {
         "type": "image",
+        "src": "../img/blog/sunny_nils.jpg",
+        "alt": "Sunny nach einer Woche bei mir"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "💡 Info SunnyCam",
+    "teaser": "Erfahre mehr über die geplante SunnyCam...",
+    "date": "2025-01-01",
+    "categories": ["Projekte", "Sunny", "Gedanken", "Info"],
+    "tags": ["Geplant", "SunnyCam", "Herzensprojekt"],
+    "author": "Nils",
+    "visible": true,
+    "content": [
+      {
+        "type": "text",
+        "value": "SunnyCam - Die Welt auf vier Pfoten! Ist ein social Media Projekt. Es soll die Sicht aus Sunny's Welt zeigen, unterlegt mit Sprüchen die Sunny sagen könnte. Lustig und kreativ. "
+      },
+      {
+        "type": "image",
         "src": "../img/blog/sunny_spielt.jpg",
         "alt": "Sunny nach einer Woche bei mir"
+      },
+      {
+        "type": "text",
+        "value": "Seid gespannt was kommt. Folgt uns bald gerne auf TikTok, Instagram und YouTube. Dort erwarten euch spannende und lustige Abendteuer - Aber auch Hundetraining. "
+      },
+      {
+        "type": "text",
+        "value": "Weitere Infos folgen in kürze natürlich hier."
+      },
+      {
+        "type": "html",
+        "value": "<div id='sprueche-mini'></div>"
+      },
+      {
+        "type": "html",
+        "value": "<div id='spendeblog-mini'></div>"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "🎁 Amazon-Wunschliste",
+    "teaser": "Unterstütze uns gerne auf Amazon, wenn dir SunnyCam oder lernDex gefällt...",
+    "date": "2025-06-24",
+    "categories": ["Projekte", "Spenden & Support", "Info"],
+    "tags": ["Geplant", "SunnyCam", "Herzensprojekt","lernDex"],
+    "author": "Nils",
+    "visible": true,
+    "content": [
+      {
+        "type": "text",
+        "value": "Die Gedankenwelt, SunnyCam und das lernDex sind Herzensprojekte und entsehen nebenbei. Wenn dir gefällt was du siehst und mich bei meiner Arbeit unterstützen möchtest."
+      },
+      {
+        "type": "text",
+        "value": "Hier eine kleine Übersicht, wie du Sunny und mich bei unseren Projekten regelmäßig unterstützen kannst:"
+      },
+      {
+        "type": "html",
+        "value": "<h3>Leckerlies und Kaffee</h3>"
+      },
+      {
+        "type": "text",
+        "value": "Wenn dir gefällt, was ich hier aufbaue und du helfen möchtest die SunnyCam zu verbessern:"
+      },
+      {
+        "type": "html",
+        "value": "<h3> Über den folgenden Link von Amazon kannst du aktiv unterstützen!</h3>"
+      },
+      {
+        "type": "text",
+        "value": "Der Link führt direkt zu Amazon (Externer Inhalt)! Alles was ihr über den Link bestellt, ist Bestandteil meiner Amazon-Wunschliste und wird direkt zu mir gesendet. "
+      },
+      {
+        "type": "html",
+        "value": "<a class='blog-btn' href='https://www.amazon.de/hz/wishlist/ls/3P3KYL40AJSZZ?ref_=wl_share' target='_blank' rel='noopener noreferrer'>Link zu Amazon</a>"
+      },
+      {
+        "type": "text",
+        "value": "⚠️Beachte bitte wenn du andere Leckerlies oder Futter, als angegeben, für Sunny bestellen möchtest: Es sollte Getreidefrei sein.⚠️ "
+      },
+      {
+        "type": "text",
+        "value": "Nutze sonst auch gerne PayPal um Sunny und mich zu unterstützen. Die Projekte sind Herzensprojekte und können nur durch eure Hilfe wachsen."
+      },
+      {
+        "type": "html",
+        "value": "<div id='spendeblog'></div>"
       }
     ]
   }
